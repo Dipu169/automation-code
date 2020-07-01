@@ -1,0 +1,96 @@
+package dudedelivery;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+
+public class Dudeordercreation {
+
+	public static void main(String[] args) {
+		
+		
+		 WebDriver driver = Dudebase.getDriver();
+		 driver.get("http://courier.dhamakaexpress.com/");
+		
+		 WebElement login = driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div/div[2]/header/div/button[2]/span"));
+		 login.click();
+		
+		
+		 WebElement phnnumber = driver.findElement(By.id("input-186"));
+		 phnnumber.sendKeys("+8801709815623");
+		
+		 WebElement password = driver.findElement(By.id("input-190"));
+		 password.sendKeys("12345678");
+		
+		 WebElement submit = driver.findElement(By.className("v-btn__content"));
+		 submit.click();
+		
+		 WebElement Newdelivery  = driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div/div[1]/div[2]/div/button/span"));
+		 Newdelivery.click();
+		
+         
+         WebElement Sendername = driver.findElement(By.id("input-391"));
+         Sendername.sendKeys("Mashrafe Mortaza");
+         
+         WebElement SenderPhonenumber = driver.findElement(By.id("input-394"));
+         SenderPhonenumber.sendKeys("+8801709815623");
+         
+         WebElement SenderStreet = driver.findElement(By.id("input-398"));
+         SenderStreet.sendKeys("House #43 Road #3 Block #A");
+         
+        //Select SenderCity = new Select(driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div/form/div/div[2]/div/div/div/div[3]/div[2]/div/div/div[1]/div[1]/div[2]/div/i")));
+		    //SenderCity.selectByIndex(0);
+         
+         Select SenderZone = new Select(driver.findElement(By.xpath("//*[@id=\"app\"]/div[2]/main/div/div/div/div/form/div/div[2]/div/div/div/div[3]/div[3]/div/div/div[1]/div[1]/div[1]")));
+         SenderZone.selectByVisibleText("Badda");
+      
+         
+         WebElement Receivername = driver.findElement(By.id("input-415"));
+         Receivername.sendKeys("Kane Williamson");
+         
+         WebElement Receiverphonenumber = driver.findElement(By.id("input-418"));
+         Receiverphonenumber.sendKeys("+8801754929023");
+         
+         WebElement ReceiverStreet = driver.findElement(By.id("input-422"));
+         ReceiverStreet.sendKeys("banani");
+         
+         //Select ReceiverCity = new Select(driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div/form/div/div[3]/div/div/div/div[3]/div[2]/div/div/div[1]/div[1]/div[1]")));
+         //ReceiverCity.selectByVisibleText("Dhaka");
+         
+         //Select ReceiverZone = new Select(driver.findElement(By.xpath("//*[@id=\"app\"]/div[2]/main/div/div/div/div/form/div/div[3]/div/div/div/div[3]/div[3]/div")));
+        // ReceiverZone.selectByIndex(1);
+         
+         WebElement DeliverySpeed = driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div/form/div/div[4]/div[1]/div[2]/div/div[1]/div/div[2]/div/div"));
+         DeliverySpeed.click();
+         
+         WebElement PackageWeight = driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div/form/div/div[4]/div[2]/div[2]/div/div[1]/div/div[1]/div/div"));
+         PackageWeight.click();
+         
+         WebElement ProductDescription = driver.findElement(By.id("input-360"));
+         ProductDescription.sendKeys("bat");
+         
+         WebElement ProductDetails = driver.findElement(By.id("input-363"));
+         ProductDetails.sendKeys("cricket bat");
+         
+         WebElement ProductValue = driver.findElement(By.id("input-369"));
+         ProductValue.sendKeys("1");
+         
+        // WebElement ProductImage = driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div/form/div/div[5]/div[3]/div/div[2]/div"));
+       
+        // ProductImage.click();
+        // ProductImage.sendKeys("\"D:\\PHOTO GALLERY\\2018-03-06-01-45-01-197.jpg\"");
+         
+         WebElement Paymenttype = driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div/form/div/div[6]/div/div[1]/div/div[2]/div/div"));
+         Paymenttype.click();
+         
+         WebElement comment = driver.findElement(By.id("input-384"));
+         comment.sendKeys("new");
+         
+         WebElement submit1 = driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div/div/div/form/div/div[8]/div[1]/button/span"));
+		     submit1.click();
+		
+
+	}
+
+}
